@@ -1,6 +1,6 @@
 [package]
 name = "tform"
-version = "0.1.0"
+version = "0.1.1"
 
 #Update edition to 2024 on 2/10/2024
 edition = "2021" 
