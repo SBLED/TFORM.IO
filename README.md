@@ -78,8 +78,8 @@ This   is some    example text.
 
 fn main() { println!("Hello, world!"); }
 
-scss
-Copy
+This is some
+more example text.
 "#;
 
     // Convert to Markdown
