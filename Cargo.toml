@@ -8,6 +8,7 @@ authors = ["Spencer Bledsoe <me@spencerbledsoe.com>"]
 description = "A crate to format plain text into well-structured Markdown or HTML."
 license = "MIT"
 repository = "https://github.com/SBLED/TFORM.IO"
+documentation = "https://docs.rs/tform"
 
 [dependencies]
 # For streaming, you can stick to std
