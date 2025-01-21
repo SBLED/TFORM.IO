@@ -1,0 +1,22 @@
+[package]
+name = "tform"
+version = "0.1.0"
+
+#Update edition to 2024 on 2/10/2024
+edition = "2021" 
+authors = ["Spencer Bledsoe <me@spencerbledsoe.com>"]
+description = "A crate to format plain text into well-structured Markdown or HTML."
+license = "MIT"
+repository = "https://github.com/SBLED/TFORM.IO"
+documentation = "https://docs.rs/tform"
+
+[dependencies]
+# For streaming, you can stick to std
+# If you want advanced pattern matching, consider regex:
+regex = "1"
+toml = "0.8.19"
+serde = {version = "1.0.217", features = ["derive"]}
+serde_json = "1.0.136"
+
+[dev-dependencies]
+# For testing, you may use crates like `assert_cmd` or `tempfile` if needed.
