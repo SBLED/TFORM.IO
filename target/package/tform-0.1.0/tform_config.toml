@@ -1,4 +1,0 @@
-remove_extra_spaces = true
-detect_headings = true
-detect_lists = true
-custom_patterns = ["(?i)todo"]
