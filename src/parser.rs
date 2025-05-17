@@ -44,8 +44,9 @@ impl Parser {
             let mut line = line_result?;
             line = line.trim_end().to_string(); // remove trailing whitespace
 
-            // Check for triple-backtick line (open/close code block)
-            if line.trim() == "```" {
+            // Check for triple-backtick line (open/close code block). Allow
+            // optional language hints like "```rust".
+            if line.trim_start().starts_with("```") {
                 if in_code_block {
                     // Closing a code block
                     in_code_block = false;

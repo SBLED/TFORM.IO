@@ -134,6 +134,37 @@ mod tests {
         assert!(output.contains("</code></pre>"), "Code block not closed properly");
     }
 
+    /// Test that code blocks with language markers are handled.
+    #[test]
+    fn test_format_to_markdown_code_block_with_language() {
+        let config = Config::default();
+        let formatter = Formatter::new(config);
+
+        let input = "```rust\nfn main() {}\n```";
+        let output = formatter
+            .format_to_markdown(Cursor::new(input))
+            .expect("Failed to format code block with language to Markdown");
+
+        assert!(output.contains("```\nfn main() {}"));
+        assert!(output.contains("```\n\n"));
+    }
+
+    /// Test that code blocks with language markers are handled in HTML output.
+    #[test]
+    fn test_format_to_html_code_block_with_language() {
+        let config = Config::default();
+        let formatter = Formatter::new(config);
+
+        let input = "```rust\nfn main() {}\n```";
+        let output = formatter
+            .format_to_html(Cursor::new(input))
+            .expect("Failed to format code block with language to HTML");
+
+        assert!(output.contains("<pre><code>"));
+        assert!(output.contains("fn main() {}"));
+        assert!(output.contains("</code></pre>"));
+    }
+
     /// Optional: Test custom Config variations if your parser handles them (e.g., removing extra spaces).
     #[test]
     fn test_custom_config() {
